@@ -1,0 +1,1097 @@
+{
+  "pageTitle": "Operate - Workflow Automation Landing Page",
+  "metadata": {
+    "description": "Complete specification for recreating the Operate workflow automation landing page. This JSON contains all layout, theme, typography, spacing, and component information needed to build the page.",
+    "framework": "Next.js with TypeScript",
+    "uiLibrary": "shadcn/ui",
+    "styling": "Tailwind CSS",
+    "responsiveBreakpoints": {
+      "mobile": "640px",
+      "tablet": "768px",
+      "desktop": "1024px",
+      "largeDesktop": "1280px"
+    }
+  },
+  "theme": {
+    "name": "Ocean Breeze",
+    "description": "A modern, professional theme with teal-cyan gradient backgrounds, soft cloud patterns, and clean minimalist design",
+    "darkMode": false,
+    "colors": {
+      "primaryBackground": {
+        "value": "oklch(0.95 0.02 200)",
+        "hex": "#E8F4F8",
+        "description": "Very light cyan-blue background, soft and airy",
+        "tailwindClass": "bg-[#E8F4F8]"
+      },
+      "secondaryBackground": {
+        "value": "oklch(0.98 0.01 180)",
+        "hex": "#F5FBFD",
+        "description": "Almost white with slight cyan tint for cards and elevated surfaces",
+        "tailwindClass": "bg-[#F5FBFD]"
+      },
+      "gradientStart": {
+        "value": "oklch(0.92 0.03 320)",
+        "hex": "#F0E8F5",
+        "description": "Light pink-purple for gradient start",
+        "tailwindClass": "from-[#F0E8F5]"
+      },
+      "gradientEnd": {
+        "value": "oklch(0.94 0.025 200)",
+        "hex": "#E8F4F8",
+        "description": "Light cyan-blue for gradient end",
+        "tailwindClass": "to-[#E8F4F8]"
+      },
+      "primaryText": {
+        "value": "oklch(0.25 0.08 260)",
+        "hex": "#2D1B4E",
+        "description": "Deep purple-blue for headings and primary text",
+        "tailwindClass": "text-[#2D1B4E]"
+      },
+      "secondaryText": {
+        "value": "oklch(0.45 0.02 250)",
+        "hex": "#5A5A6B",
+        "description": "Medium gray-blue for body text and descriptions",
+        "tailwindClass": "text-[#5A5A6B]"
+      },
+      "accentPrimary": {
+        "value": "oklch(0.55 0.18 240)",
+        "hex": "#4A7CFF",
+        "description": "Vibrant blue-purple for primary buttons and highlights",
+        "tailwindClass": "bg-[#4A7CFF]"
+      },
+      "accentPrimaryHover": {
+        "value": "oklch(0.50 0.20 240)",
+        "hex": "#3D6BFF",
+        "description": "Darker blue-purple for button hover states",
+        "tailwindClass": "hover:bg-[#3D6BFF]"
+      },
+      "accentSecondary": {
+        "value": "oklch(0.60 0.15 200)",
+        "hex": "#5BC4D4",
+        "description": "Bright cyan-teal for secondary accents",
+        "tailwindClass": "bg-[#5BC4D4]"
+      },
+      "highlightBox": {
+        "value": "oklch(0.88 0.04 280)",
+        "hex": "#E8D5F0",
+        "description": "Light purple-pink box for highlighting key words in headlines",
+        "tailwindClass": "bg-[#E8D5F0]"
+      },
+      "buttonPrimaryBg": {
+        "value": "oklch(0.55 0.18 240)",
+        "hex": "#4A7CFF",
+        "description": "Primary button background - vibrant blue-purple",
+        "tailwindClass": "bg-[#4A7CFF]"
+      },
+      "buttonPrimaryText": {
+        "value": "oklch(1 0 0)",
+        "hex": "#FFFFFF",
+        "description": "White text on primary buttons",
+        "tailwindClass": "text-white"
+      },
+      "buttonSecondaryBg": {
+        "value": "oklch(1 0 0)",
+        "hex": "#FFFFFF",
+        "description": "White background for secondary buttons",
+        "tailwindClass": "bg-white"
+      },
+      "buttonSecondaryText": {
+        "value": "oklch(0.45 0.02 250)",
+        "hex": "#5A5A6B",
+        "description": "Dark gray-blue text on secondary buttons",
+        "tailwindClass": "text-[#5A5A6B]"
+      },
+      "buttonSecondaryBorder": {
+        "value": "oklch(0.85 0.01 250)",
+        "hex": "#D0D0D5",
+        "description": "Subtle border for secondary buttons",
+        "tailwindClass": "border-[#D0D0D5]"
+      },
+      "success": {
+        "value": "oklch(0.60 0.15 150)",
+        "hex": "#10B981",
+        "description": "Green for positive indicators and success states",
+        "tailwindClass": "text-[#10B981]"
+      },
+      "error": {
+        "value": "oklch(0.60 0.20 25)",
+        "hex": "#EF4444",
+        "description": "Red for negative indicators and errors",
+        "tailwindClass": "text-[#EF4444]"
+      },
+      "border": {
+        "value": "oklch(0.88 0.01 250)",
+        "hex": "#E0E0E5",
+        "description": "Subtle border color for cards and dividers",
+        "tailwindClass": "border-[#E0E0E5]"
+      },
+      "dashboardCardBg": {
+        "value": "oklch(1 0 0)",
+        "hex": "#FFFFFF",
+        "description": "White background for dashboard cards",
+        "tailwindClass": "bg-white"
+      },
+      "dashboardSidebarBg": {
+        "value": "oklch(0.98 0.01 200)",
+        "hex": "#F8FCFD",
+        "description": "Very light cyan for dashboard sidebar",
+        "tailwindClass": "bg-[#F8FCFD]"
+      },
+      "dashboardActiveItem": {
+        "value": "oklch(0.55 0.18 240)",
+        "hex": "#4A7CFF",
+        "description": "Active navigation item color in dashboard",
+        "tailwindClass": "bg-[#4A7CFF]"
+      },
+      "cloudPattern": {
+        "description": "Subtle wispy cloud shapes in gradient background using CSS or SVG",
+        "opacity": "0.15",
+        "blur": "20px"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "Inter, system-ui, -apple-system, sans-serif",
+        "mono": "ui-monospace, SFMono-Regular, monospace",
+        "description": "Inter for all text, system monospace for code"
+      },
+      "headings": {
+        "h1": {
+          "fontSize": {
+            "mobile": "2.5rem",
+            "tablet": "3.5rem",
+            "desktop": "4rem",
+            "largeDesktop": "4.5rem"
+          },
+          "fontWeight": "700",
+          "lineHeight": "1.1",
+          "letterSpacing": "-0.02em",
+          "color": "primaryText",
+          "description": "Large, bold headline for hero section"
+        },
+        "h2": {
+          "fontSize": {
+            "mobile": "2rem",
+            "tablet": "2.5rem",
+            "desktop": "3rem"
+          },
+          "fontWeight": "700",
+          "lineHeight": "1.2",
+          "letterSpacing": "-0.01em",
+          "color": "primaryText"
+        },
+        "h3": {
+          "fontSize": {
+            "mobile": "1.5rem",
+            "tablet": "1.75rem",
+            "desktop": "2rem"
+          },
+          "fontWeight": "600",
+          "lineHeight": "1.3",
+          "color": "primaryText"
+        },
+        "h4": {
+          "fontSize": "1.25rem",
+          "fontWeight": "600",
+          "lineHeight": "1.4",
+          "color": "primaryText"
+        }
+      },
+      "body": {
+        "fontSize": {
+          "mobile": "0.9375rem",
+          "desktop": "1rem"
+        },
+        "fontWeight": "400",
+        "lineHeight": "1.6",
+        "color": "secondaryText"
+      },
+      "small": {
+        "fontSize": "0.875rem",
+        "fontWeight": "400",
+        "lineHeight": "1.5",
+        "color": "secondaryText"
+      },
+      "button": {
+        "fontSize": "1rem",
+        "fontWeight": "500",
+        "letterSpacing": "0.01em"
+      },
+      "navLink": {
+        "fontSize": "0.9375rem",
+        "fontWeight": "500",
+        "color": "secondaryText",
+        "hoverColor": "primaryText"
+      }
+    },
+    "spacing": {
+      "containerPaddingX": {
+        "mobile": "1.5rem",
+        "tablet": "3rem",
+        "desktop": "5rem",
+        "largeDesktop": "8rem"
+      },
+      "sectionPaddingY": {
+        "mobile": "4rem",
+        "tablet": "5rem",
+        "desktop": "6rem"
+      },
+      "componentGapSmall": "0.75rem",
+      "componentGapMedium": "1.5rem",
+      "componentGapLarge": "3rem",
+      "componentGapXLarge": "4rem",
+      "navbarHeight": "4.5rem",
+      "buttonPaddingX": "1.5rem",
+      "buttonPaddingY": "0.75rem",
+      "cardPadding": "1.5rem"
+    },
+    "borderRadius": {
+      "small": "0.5rem",
+      "medium": "0.75rem",
+      "large": "1rem",
+      "xlarge": "1.5rem",
+      "button": "0.5rem",
+      "card": "0.75rem",
+      "dashboardCard": "0.75rem"
+    },
+    "shadows": {
+      "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      "dashboardCard": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"
+    },
+    "aesthetic": "Modern, clean, minimalist, professional, airy, soft gradients, cloud-like patterns, high contrast text, subtle shadows"
+  },
+  "layout": {
+    "type": "SinglePageScroll",
+    "maxWidth": "100%",
+    "sections": [
+      {
+        "id": "header",
+        "type": "Navbar",
+        "position": "top",
+        "sticky": true,
+        "zIndex": 50,
+        "background": {
+          "color": "transparent",
+          "backdropBlur": false
+        },
+        "layout": {
+          "display": "flex",
+          "justifyContent": "space-between",
+          "alignItems": "center",
+          "padding": {
+            "mobile": "1rem 1.5rem",
+            "tablet": "1.25rem 3rem",
+            "desktop": "1.5rem 5rem"
+          },
+          "height": "navbarHeight"
+        },
+        "components": [
+          {
+            "type": "Logo",
+            "text": "Operate",
+            "icon": {
+              "type": "Geometric shape - stylized diamond or arrow",
+              "color": "accentPrimary",
+              "size": "1.25rem",
+              "position": "left"
+            },
+            "shadcnComponent": "Custom/Text",
+            "href": "/",
+            "style": {
+              "fontSize": "1.5rem",
+              "fontWeight": "700",
+              "color": "primaryText",
+              "display": "flex",
+              "alignItems": "center",
+              "gap": "0.5rem"
+            }
+          },
+          {
+            "type": "Navigation",
+            "layout": "flex",
+            "gap": "2rem",
+            "items": [
+              {
+                "type": "NavLink",
+                "text": "Solutions",
+                "href": "/solutions",
+                "shadcnComponent": "Link",
+                "style": {
+                  "color": "secondaryText",
+                  "hoverColor": "primaryText",
+                  "transition": "color 0.2s ease"
+                }
+              },
+              {
+                "type": "NavLink",
+                "text": "Success Stories",
+                "href": "/case-studies",
+                "shadcnComponent": "Link"
+              },
+              {
+                "type": "NavLink",
+                "text": "Resources",
+                "href": "/resources",
+                "shadcnComponent": "Link"
+              },
+              {
+                "type": "NavLink",
+                "text": "Pricing",
+                "href": "/pricing",
+                "shadcnComponent": "Link"
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "variant": "default",
+            "text": "Schedule Demo →",
+            "shadcnComponent": "Button",
+            "style": {
+              "backgroundColor": "buttonPrimaryBg",
+              "color": "buttonPrimaryText",
+              "borderRadius": "button",
+              "padding": "0.75rem 1.5rem",
+              "fontSize": "0.9375rem",
+              "fontWeight": "500"
+            }
+          }
+        ]
+      },
+      {
+        "id": "hero-section",
+        "type": "HeroSection",
+        "background": {
+          "type": "gradient",
+          "gradient": "linear-gradient(135deg, gradientStart 0%, gradientEnd 100%)",
+          "effects": [
+            {
+              "type": "cloudPattern",
+              "description": "Subtle wispy cloud shapes scattered across background",
+              "opacity": "0.15",
+              "blur": "20px",
+              "color": "accentPrimary"
+            }
+          ],
+          "position": "top"
+        },
+        "layout": {
+          "display": "flex",
+          "flexDirection": "column",
+          "alignItems": "center",
+          "padding": {
+            "mobile": "4rem 1.5rem",
+            "tablet": "5rem 3rem",
+            "desktop": "6rem 5rem"
+          },
+          "textAlign": "center",
+          "maxWidth": "1400px",
+          "margin": "0 auto"
+        },
+        "components": [
+          {
+            "type": "Heading",
+            "level": 1,
+            "text": "Transform Your Operations with Intelligent Automation",
+            "highlightedWords": [
+              {
+                "word": "Automation",
+                "style": {
+                  "backgroundColor": "highlightBox",
+                  "padding": "0.25rem 0.75rem",
+                  "borderRadius": "0.5rem",
+                  "display": "inline-block"
+                }
+              }
+            ],
+            "shadcnComponent": "h1",
+            "style": {
+              "maxWidth": "900px",
+              "marginBottom": "1.5rem"
+            }
+          },
+          {
+            "type": "Paragraph",
+            "text": "An intelligent operations platform built to eliminate manual work, minimize mistakes, and provide complete transparency into your business processes.",
+            "shadcnComponent": "p",
+            "maxWidth": "650px",
+            "style": {
+              "fontSize": "1.125rem",
+              "lineHeight": "1.7",
+              "marginBottom": "2.5rem",
+              "color": "secondaryText"
+            }
+          },
+          {
+            "type": "ButtonGroup",
+            "layout": "flex",
+            "gap": "1rem",
+            "justifyContent": "center",
+            "flexWrap": "wrap",
+            "items": [
+              {
+                "type": "Button",
+                "variant": "default",
+                "text": "Schedule Demo →",
+                "shadcnComponent": "Button",
+                "style": {
+                  "backgroundColor": "buttonPrimaryBg",
+                  "color": "buttonPrimaryText",
+                  "borderRadius": "button",
+                  "padding": "0.875rem 2rem",
+                  "fontSize": "1rem",
+                  "fontWeight": "500",
+                  "hover": {
+                    "backgroundColor": "accentPrimaryHover",
+                    "transform": "translateY(-1px)",
+                    "boxShadow": "lg"
+                  }
+                }
+              },
+              {
+                "type": "Button",
+                "variant": "outline",
+                "text": "Explore Platform →",
+                "icon": {
+                  "type": "ArrowRight",
+                  "position": "right",
+                  "color": "accentPrimary"
+                },
+                "shadcnComponent": "Button",
+                "style": {
+                  "backgroundColor": "buttonSecondaryBg",
+                  "color": "buttonSecondaryText",
+                  "border": "1px solid buttonSecondaryBorder",
+                  "borderRadius": "button",
+                  "padding": "0.875rem 2rem",
+                  "fontSize": "1rem",
+                  "fontWeight": "500",
+                  "hover": {
+                    "backgroundColor": "secondaryBackground",
+                    "borderColor": "accentPrimary"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dashboard-preview-section",
+        "type": "DashboardPreview",
+        "layout": {
+          "display": "flex",
+          "flexDirection": "column",
+          "padding": {
+            "mobile": "4rem 1.5rem",
+            "tablet": "5rem 3rem",
+            "desktop": "6rem 5rem"
+          },
+          "maxWidth": "1600px",
+          "margin": "0 auto"
+        },
+        "components": [
+          {
+            "type": "DashboardContainer",
+            "style": {
+              "backgroundColor": "dashboardCardBg",
+              "borderRadius": "xlarge",
+              "padding": {
+                "mobile": "1rem",
+                "desktop": "2rem"
+              },
+              "boxShadow": "xl",
+              "overflow": "hidden"
+            },
+            "sections": [
+              {
+                "name": "Sidebar",
+                "width": {
+                  "mobile": "100%",
+                  "desktop": "240px"
+                },
+                "style": {
+                  "backgroundColor": "dashboardSidebarBg",
+                  "padding": "1.5rem",
+                  "borderRight": "1px solid border"
+                },
+                "components": [
+                  {
+                    "type": "Logo",
+                    "text": "Operate",
+                    "icon": {
+                      "type": "Geometric shape",
+                      "color": "accentPrimary"
+                    },
+                    "style": {
+                      "fontSize": "1.25rem",
+                      "fontWeight": "700",
+                      "marginBottom": "2rem",
+                      "color": "primaryText"
+                    }
+                  },
+                  {
+                    "type": "NavigationSection",
+                    "title": "Favorites",
+                    "items": [],
+                    "style": {
+                      "marginBottom": "2rem"
+                    }
+                  },
+                  {
+                    "type": "NavigationSection",
+                    "title": "Recently",
+                    "items": [],
+                    "style": {
+                      "marginBottom": "2rem"
+                    }
+                  },
+                  {
+                    "type": "NavigationMenu",
+                    "items": [
+                      {
+                        "text": "Overview",
+                        "active": true,
+                        "icon": "LayoutDashboard",
+                        "style": {
+                          "backgroundColor": "dashboardActiveItem",
+                          "color": "buttonPrimaryText",
+                          "padding": "0.75rem 1rem",
+                          "borderRadius": "medium",
+                          "fontWeight": "500"
+                        }
+                      },
+                      {
+                        "text": "Projects",
+                        "active": false,
+                        "icon": "Folder",
+                        "style": {
+                          "color": "secondaryText",
+                          "padding": "0.75rem 1rem",
+                          "hoverColor": "primaryText"
+                        }
+                      },
+                      {
+                        "text": "Dashboards",
+                        "active": false,
+                        "icon": "BarChart3",
+                        "hasSubmenu": true,
+                        "submenu": [
+                          {
+                            "text": "Overview",
+                            "indent": true
+                          },
+                          {
+                            "text": "Analytics",
+                            "indent": true
+                          },
+                          {
+                            "text": "Projects",
+                            "indent": true
+                          }
+                        ]
+                      },
+                      {
+                        "text": "Pages",
+                        "active": false,
+                        "icon": "FileText",
+                        "hasSubmenu": true,
+                        "submenu": [
+                          {
+                            "text": "User Profile",
+                            "indent": true
+                          },
+                          {
+                            "text": "Overview",
+                            "indent": true
+                          },
+                          {
+                            "text": "Projects",
+                            "indent": true
+                          }
+                        ]
+                      }
+                    ],
+                    "shadcnComponent": "Sidebar"
+                  }
+                ]
+              },
+              {
+                "name": "MainContent",
+                "style": {
+                  "flex": "1",
+                  "padding": "2rem",
+                  "backgroundColor": "dashboardCardBg"
+                },
+                "components": [
+                  {
+                    "type": "TopBar",
+                    "layout": {
+                      "display": "flex",
+                      "justifyContent": "space-between",
+                      "alignItems": "center",
+                      "marginBottom": "2rem"
+                    },
+                    "components": [
+                      {
+                        "type": "Breadcrumb",
+                        "items": [
+                          {
+                            "text": "Dashboards",
+                            "href": "#"
+                          },
+                          {
+                            "text": "Default",
+                            "href": "#",
+                            "active": true
+                          }
+                        ],
+                        "style": {
+                          "fontSize": "0.875rem",
+                          "color": "secondaryText"
+                        }
+                      },
+                      {
+                        "type": "SearchBar",
+                        "placeholder": "Q Search",
+                        "icon": "Search",
+                        "shadcnComponent": "Input",
+                        "style": {
+                          "width": "200px",
+                          "padding": "0.5rem 1rem",
+                          "borderRadius": "medium",
+                          "border": "1px solid border",
+                          "backgroundColor": "secondaryBackground"
+                        }
+                      },
+                      {
+                        "type": "IconButtonGroup",
+                        "layout": "flex",
+                        "gap": "0.75rem",
+                        "items": [
+                          {
+                            "type": "IconButton",
+                            "icon": "Star",
+                            "variant": "ghost",
+                            "shadcnComponent": "Button"
+                          },
+                          {
+                            "type": "IconButton",
+                            "icon": "Bell",
+                            "variant": "ghost",
+                            "shadcnComponent": "Button"
+                          },
+                          {
+                            "type": "IconButton",
+                            "icon": "Settings",
+                            "variant": "ghost",
+                            "shadcnComponent": "Button"
+                          },
+                          {
+                            "type": "IconButton",
+                            "icon": "MoreVertical",
+                            "variant": "ghost",
+                            "shadcnComponent": "Button"
+                          },
+                          {
+                            "type": "IconButton",
+                            "icon": "Calendar",
+                            "variant": "ghost",
+                            "shadcnComponent": "Button"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "MetricsGrid",
+                    "layout": "grid",
+                    "columns": {
+                      "mobile": 1,
+                      "tablet": 2,
+                      "desktop": 4
+                    },
+                    "gap": "1.5rem",
+                    "marginBottom": "2rem",
+                    "items": [
+                      {
+                        "type": "MetricCard",
+                        "shadcnComponent": "Card",
+                        "title": "Total Views",
+                        "value": "7,265",
+                        "indicator": {
+                          "type": "positive",
+                          "value": "+11.01%",
+                          "icon": "TrendingUp",
+                          "color": "success"
+                        },
+                        "style": {
+                          "backgroundColor": "dashboardCardBg",
+                          "padding": "cardPadding",
+                          "borderRadius": "dashboardCard",
+                          "boxShadow": "dashboardCard",
+                          "border": "1px solid border"
+                        }
+                      },
+                      {
+                        "type": "MetricCard",
+                        "shadcnComponent": "Card",
+                        "title": "Total Visits",
+                        "value": "3,671",
+                        "indicator": {
+                          "type": "negative",
+                          "value": "-0.05%",
+                          "icon": "TrendingDown",
+                          "color": "error"
+                        },
+                        "style": {
+                          "backgroundColor": "dashboardCardBg",
+                          "padding": "cardPadding",
+                          "borderRadius": "dashboardCard",
+                          "boxShadow": "dashboardCard",
+                          "border": "1px solid border"
+                        }
+                      },
+                      {
+                        "type": "MetricCard",
+                        "shadcnComponent": "Card",
+                        "title": "Page Views",
+                        "value": "3,671",
+                        "indicator": {
+                          "type": "negative",
+                          "value": "-0.03%",
+                          "icon": "TrendingDown",
+                          "color": "error"
+                        },
+                        "style": {
+                          "backgroundColor": "dashboardCardBg",
+                          "padding": "cardPadding",
+                          "borderRadius": "dashboardCard",
+                          "boxShadow": "dashboardCard",
+                          "border": "1px solid border"
+                        }
+                      },
+                      {
+                        "type": "MetricCard",
+                        "shadcnComponent": "Card",
+                        "title": "Active Users",
+                        "value": "2,318",
+                        "indicator": {
+                          "type": "positive",
+                          "value": "+6.08%",
+                          "icon": "TrendingUp",
+                          "color": "success"
+                        },
+                        "style": {
+                          "backgroundColor": "dashboardCardBg",
+                          "padding": "cardPadding",
+                          "borderRadius": "dashboardCard",
+                          "boxShadow": "dashboardCard",
+                          "border": "1px solid border"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ChartSection",
+                    "layout": "grid",
+                    "columns": {
+                      "mobile": 1,
+                      "desktop": "2fr 1fr"
+                    },
+                    "gap": "1.5rem",
+                    "components": [
+                      {
+                        "type": "LineChart",
+                        "title": "Total Users Total Projects Operating Status",
+                        "shadcnComponent": "Card",
+                        "style": {
+                          "backgroundColor": "dashboardCardBg",
+                          "padding": "cardPadding",
+                          "borderRadius": "dashboardCard",
+                          "boxShadow": "dashboardCard",
+                          "border": "1px solid border"
+                        },
+                        "chartDetails": {
+                          "type": "LineChart",
+                          "library": "Recharts",
+                          "dataSets": [
+                            {
+                              "name": "This year",
+                              "color": "accentPrimary",
+                              "strokeWidth": 2
+                            },
+                            {
+                              "name": "Last year",
+                              "color": "accentSecondary",
+                              "strokeWidth": 2,
+                              "strokeDasharray": "5 5"
+                            }
+                          ],
+                          "yAxis": {
+                            "max": 30000,
+                            "label": "Count",
+                            "format": "K"
+                          },
+                          "xAxis": {
+                            "type": "category",
+                            "data": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+                          },
+                          "legend": {
+                            "position": "top",
+                            "show": true
+                          }
+                        }
+                      },
+                      {
+                        "type": "SidebarPanel",
+                        "style": {
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "gap": "1.5rem"
+                        },
+                        "components": [
+                          {
+                            "type": "NotificationsPanel",
+                            "title": "Notifications",
+                            "shadcnComponent": "Card",
+                            "style": {
+                              "backgroundColor": "dashboardCardBg",
+                              "padding": "cardPadding",
+                              "borderRadius": "dashboardCard",
+                              "boxShadow": "dashboardCard",
+                              "border": "1px solid border"
+                            },
+                            "items": [
+                              {
+                                "text": "Task completed successfully.",
+                                "time": "Just now",
+                                "icon": "CheckCircle",
+                                "color": "success"
+                              },
+                              {
+                                "text": "New team member added.",
+                                "time": "59 minutes ago",
+                                "icon": "UserPlus",
+                                "color": "accentPrimary"
+                              },
+                              {
+                                "text": "Task completed successfully.",
+                                "time": "12 hours ago",
+                                "icon": "CheckCircle",
+                                "color": "success"
+                              },
+                              {
+                                "text": "Alex Morgan subscribed to updates.",
+                                "time": "Today, 11:59 AM",
+                                "icon": "Bell",
+                                "color": "accentSecondary"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ActivitiesPanel",
+                            "title": "Activities",
+                            "shadcnComponent": "Card",
+                            "style": {
+                              "backgroundColor": "dashboardCardBg",
+                              "padding": "cardPadding",
+                              "borderRadius": "dashboardCard",
+                              "boxShadow": "dashboardCard",
+                              "border": "1px solid border"
+                            },
+                            "items": [
+                              {
+                                "text": "Updated workflow settings.",
+                                "time": "Just now",
+                                "icon": "Settings"
+                              },
+                              {
+                                "text": "Deployed new version.",
+                                "time": "59 minutes ago",
+                                "icon": "Rocket"
+                              },
+                              {
+                                "text": "Reported an issue.",
+                                "time": "12 hours ago",
+                                "icon": "AlertCircle"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "TrafficSourcesSection",
+                    "title": "Traffic by Source",
+                    "shadcnComponent": "Card",
+                    "style": {
+                      "backgroundColor": "dashboardCardBg",
+                      "padding": "cardPadding",
+                      "borderRadius": "dashboardCard",
+                      "boxShadow": "dashboardCard",
+                      "border": "1px solid border",
+                      "marginTop": "1.5rem"
+                    },
+                    "items": [
+                      {
+                        "source": "Google",
+                        "percentage": "--",
+                        "barWidth": "85%",
+                        "color": "accentPrimary"
+                      },
+                      {
+                        "source": "YouTube",
+                        "percentage": "--",
+                        "barWidth": "65%",
+                        "color": "accentSecondary"
+                      },
+                      {
+                        "source": "Instagram",
+                        "percentage": "--",
+                        "barWidth": "45%",
+                        "color": "accentPrimary"
+                      },
+                      {
+                        "source": "Pinterest",
+                        "percentage": "--",
+                        "barWidth": "30%",
+                        "color": "accentSecondary"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "componentMapping": {
+    "shadcnComponents": {
+      "Button": "components/ui/button.tsx",
+      "Card": "components/ui/card.tsx",
+      "Input": "components/ui/input.tsx",
+      "Avatar": "components/ui/avatar.tsx",
+      "Link": "components/ui/link (or Next.js Link)",
+      "Select": "components/ui/select.tsx",
+      "Sidebar": "components/ui/sidebar.tsx",
+      "Badge": "components/ui/badge.tsx",
+      "Separator": "components/ui/separator.tsx"
+    },
+    "customComponents": {
+      "Navbar": "components/Navbar.tsx",
+      "Hero": "components/Hero.tsx",
+      "DashboardPreview": "components/DashboardPreview.tsx",
+      "MetricCard": "components/MetricCard.tsx",
+      "LineChart": "components/LineChart.tsx",
+      "NotificationsPanel": "components/NotificationsPanel.tsx",
+      "ActivitiesPanel": "components/ActivitiesPanel.tsx",
+      "TrafficSources": "components/TrafficSources.tsx"
+    }
+  },
+  "responsiveDesign": {
+    "breakpoints": {
+      "mobile": {
+        "maxWidth": "640px",
+        "containerPadding": "1.5rem",
+        "fontScale": "0.875",
+        "spacingScale": "0.75"
+      },
+      "tablet": {
+        "minWidth": "641px",
+        "maxWidth": "1024px",
+        "containerPadding": "3rem",
+        "fontScale": "0.9375",
+        "spacingScale": "0.875"
+      },
+      "desktop": {
+        "minWidth": "1025px",
+        "maxWidth": "1280px",
+        "containerPadding": "5rem",
+        "fontScale": "1",
+        "spacingScale": "1"
+      },
+      "largeDesktop": {
+        "minWidth": "1281px",
+        "containerPadding": "8rem",
+        "fontScale": "1.125",
+        "spacingScale": "1.125"
+      }
+    },
+    "mobileSpecific": {
+      "navbar": {
+        "layout": "flex",
+        "flexDirection": "column",
+        "gap": "1rem",
+        "padding": "1rem"
+      },
+      "hero": {
+        "headingSize": "2.5rem",
+        "padding": "3rem 1.5rem"
+      },
+      "dashboard": {
+        "sidebar": {
+          "display": "none",
+          "mobileMenu": "hamburger menu"
+        },
+        "metricsGrid": {
+          "columns": 1
+        },
+        "chartSection": {
+          "columns": 1
+        }
+      }
+    }
+  },
+  "animations": {
+    "fadeIn": {
+      "duration": "0.3s",
+      "easing": "ease-in-out"
+    },
+    "slideUp": {
+      "duration": "0.4s",
+      "easing": "ease-out",
+      "delay": "0.1s"
+    },
+    "hover": {
+      "button": {
+        "transform": "translateY(-1px)",
+        "transition": "all 0.2s ease"
+      },
+      "card": {
+        "transform": "translateY(-2px)",
+        "boxShadow": "lg",
+        "transition": "all 0.2s ease"
+      }
+    }
+  },
+  "implementationNotes": {
+    "styling": "Use Tailwind CSS classes mapped from theme values. All colors should reference CSS variables or theme tokens.",
+    "components": "Extract all visual pieces into separate reusable components in /components/. Never put significant UI in page.tsx or layout.tsx.",
+    "serverComponents": "Use server components by default, add 'use client' only when interactivity is needed (buttons, charts, interactive elements).",
+    "chartLibrary": "Use Recharts for the dashboard chart component. Install: npm install recharts",
+    "icons": "Use lucide-react for all icons. Install: npm install lucide-react",
+    "images": "Dashboard screenshots and feature images should be placed in /public/ folder. Use Next.js Image component for optimization.",
+    "gradientBackground": "Implement hero section gradient using Tailwind gradient utilities: bg-gradient-to-br from-[#F0E8F5] to-[#E8F4F8]",
+    "cloudPattern": "Create cloud pattern using CSS pseudo-elements with blur filters, or use SVG patterns. Opacity should be 0.15 with 20px blur.",
+    "highlightedWord": "The word 'Automation' in the headline should be wrapped in a span with background color highlightBox, padding, and border-radius.",
+    "dashboardResponsive": "On mobile, sidebar should be hidden and replaced with a hamburger menu. Dashboard should stack vertically.",
+    "metricCards": "Each metric card should display title, large value number, and indicator with icon (trending up/down) and percentage.",
+    "chartImplementation": "Line chart should use Recharts LineChart component with two data series, custom colors, and responsive design.",
+    "notifications": "Notifications and activities panels should show icon, text, and relative time. Use Badge component for status indicators if needed."
+  },
+  "accessibility": {
+    "colorContrast": "Ensure WCAG AA compliance - primary text on background should have at least 4.5:1 contrast ratio",
+    "keyboardNavigation": "All interactive elements should be keyboard accessible",
+    "ariaLabels": "Add appropriate aria-labels to icon buttons and interactive elements",
+    "focusStates": "Visible focus indicators on all focusable elements",
+    "semanticHTML": "Use proper semantic HTML elements (nav, main, section, article, etc.)"
+  }
+}
+
